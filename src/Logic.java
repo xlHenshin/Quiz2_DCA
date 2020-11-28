@@ -70,6 +70,11 @@ public class Logic {
 			alien.get(i).move();
 		}
 	}
+	
+	public void shoot() {
+		
+		hero.shoot();
+	}
 
 
 }

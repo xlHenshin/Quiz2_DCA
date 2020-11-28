@@ -1,3 +1,4 @@
+
 import processing.core.PApplet;
 
 public class Main extends PApplet{
@@ -47,6 +48,11 @@ public class Main extends PApplet{
 		}
 		if(keyCode == LEFT) {
 			moveLeft=true;
+		}
+		
+		if (keyCode == ' ') {
+			
+			logic.shoot();
 		}
 	}
 	

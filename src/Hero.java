@@ -1,12 +1,16 @@
+import java.util.ArrayList;
+
 import processing.core.PApplet;
+
 
 public class Hero extends Character implements Runnable{
 
+	private ArrayList<Bullet> bullet;
+	
 	public Hero(int posX, int posY, int size, PApplet app) {
 		super(posX, posY, size, app);
-		
 		speed=5;
-		// TODO Auto-generated constructor stub
+		bullet = new ArrayList<Bullet>();
 	}
 
 
@@ -15,6 +19,16 @@ public class Hero extends Character implements Runnable{
 		
 		app.fill(0,255,0);
 		app.rect(posX, posY, size, size);
+		
+		for (int i = 0; i < bullet.size(); i++) {
+			bullet.get(i).paint();
+			bullet.get(i).move();
+			
+			/*if(eliminarBala) {
+				balas.remove(i);
+				eliminarBala = false;
+			}*/
+		}
 	}
 
 
@@ -41,6 +55,12 @@ public class Hero extends Character implements Runnable{
 			posX += speed;
 		}
 	}
+	
+	public void shoot() {
+		
+		Bullet b = new Bullet(posX + 20, posY, app);
+		bullet.add(b);
+	}
 
 
 	@Override
@@ -50,6 +70,16 @@ public class Hero extends Character implements Runnable{
 		moveLeft();
 		moveRight();
 	}
-	
 
+
+	public ArrayList<Bullet> getBullet() {
+		return bullet;
+	}
+
+
+	public void setBullet(ArrayList<Bullet> bullet) {
+		this.bullet = bullet;
+	}
+	
+	
 }
