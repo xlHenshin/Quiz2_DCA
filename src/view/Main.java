@@ -49,12 +49,6 @@ public class Main extends PApplet{
 		}
 	}
 	
-	public void mouseClicked() {
-		
-		System.out.println(mouseX);
-		System.out.println(mouseY);
-	}
-	
 	public void keyPressed() {
 		
 		controller.keyPressed(key);

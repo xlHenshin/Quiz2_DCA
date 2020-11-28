@@ -53,7 +53,7 @@ public class Logic {
 			Thread newAlien = new Thread(alien.get(i));
 			newAlien.start();
 		}
-		
+
 		try {
 			impactAlien();
 		} catch (Lose e) {
@@ -61,6 +61,7 @@ public class Logic {
 			System.out.println("Game Over");
 			gameOver=true;
 			end=2;
+			
 		}
 		
 		moveAlien();
@@ -77,9 +78,12 @@ public class Logic {
 			impact();
 		} catch (Win e) {
 			// TODO Auto-generated catch block
+			
 			System.out.println("You Win");
 			gameOver=true;
 			end=1;
+			
+		
 		}
 	}
 	
@@ -202,13 +206,18 @@ public class Logic {
 				
 				if (alien.size()==0) {
 					
+					hero.getBullet().clear();
+					alien.clear();
+					System.out.println();
 					end=0;
 					alienCounter=0;
 					gameOver=false;
 					createAlien();
 					
+					
 				} else {
 					
+					hero.getBullet().clear();
 					alien.clear();
 					System.out.println(alien.size());
 					end=0;
