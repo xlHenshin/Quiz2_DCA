@@ -33,6 +33,7 @@ public class Main extends PApplet{
 		background (0);
 		controller.paintAlien();
 		controller.paintHero();
+		controller.paintBullet();
 		
 		if (moveRight==true){
 

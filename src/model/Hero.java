@@ -7,11 +7,13 @@ import processing.core.PApplet;
 public class Hero extends Character implements Runnable{
 
 	private ArrayList<Bullet> bullet;
+	private boolean eliminateBullet;
 	
 	public Hero(int posX, int posY, int size, PApplet app) {
 		super(posX, posY, size, app);
 		speed=5;
 		bullet = new ArrayList<Bullet>();
+		eliminateBullet=false;
 	}
 
 
@@ -20,15 +22,18 @@ public class Hero extends Character implements Runnable{
 		
 		app.fill(0,255,0);
 		app.rect(posX, posY, size, size);
+	}
+	
+	public void paintBullet() {
 		
 		for (int i = 0; i < bullet.size(); i++) {
 			bullet.get(i).paint();
 			bullet.get(i).move();
 			
-			/*if(eliminarBala) {
-				balas.remove(i);
-				eliminarBala = false;
-			}*/
+			if(eliminateBullet == true) {
+				bullet.remove(i);
+				eliminateBullet = false;
+			}
 		}
 	}
 
@@ -59,7 +64,7 @@ public class Hero extends Character implements Runnable{
 	
 	public void shoot() {
 		
-		Bullet b = new Bullet(posX + 20, posY, app);
+		Bullet b = new Bullet(posX, posY-30, app);
 		bullet.add(b);
 	}
 
@@ -81,6 +86,17 @@ public class Hero extends Character implements Runnable{
 	public void setBullet(ArrayList<Bullet> bullet) {
 		this.bullet = bullet;
 	}
+
+
+	public boolean isEliminateBullet() {
+		return eliminateBullet;
+	}
+
+
+	public void setEliminateBullet(boolean eliminateBullet) {
+		this.eliminateBullet = eliminateBullet;
+	}
+	
 	
 	
 }

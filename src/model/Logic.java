@@ -72,9 +72,42 @@ public class Logic {
 		}
 	}
 	
+	public void paintBullet() {
+		
+		hero.paintBullet();
+		Thread newBullet = new Thread (hero);
+		newBullet.start();
+		
+		bulletImpact();
+	}
+	
 	public void shoot() {
 		
 		hero.shoot();
+	}
+	
+	public void bulletImpact() {
+		
+		for (int i = 0; i < hero.getBullet().size(); i++) {
+			for (int j = 0; j < alien.size(); j++) {
+				
+				int posX1=hero.getBullet().get(i).getPosX();
+				int posY1=hero.getBullet().get(i).getPosY();
+				int posX2=alien.get(j).getPosX();
+				int posY2=alien.get(j).getPosY();
+				int size=alien.get(j).getSize();
+				
+				if (PApplet.dist(posX1, posY1, posX2, posY2) < size) {
+					
+					hero.setEliminateBullet(true);
+					alien.remove(j);
+					System.out.println("impacto");
+					
+					
+				}
+				
+			}
+		}
 	}
 
 

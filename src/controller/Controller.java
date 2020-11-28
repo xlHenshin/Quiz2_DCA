@@ -26,6 +26,11 @@ public class Controller {
 		
 		logic.paintHero();
 	}
+	
+	public void paintBullet() {
+		
+		logic.paintBullet();
+	}
 
 	public void moveRight() {
 		// TODO Auto-generated method stub
