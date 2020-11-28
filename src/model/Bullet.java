@@ -1,7 +1,7 @@
 package model;
 import processing.core.PApplet;
 
-public class Bullet implements Runnable{
+public class Bullet {
 
 	private PApplet app;
 	private int posX, posY, speed;
@@ -27,12 +27,7 @@ public class Bullet implements Runnable{
 		posY -= speed; 
 	}
 	
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
-		move();
-	}
+	
 
 	public int getPosX() {
 		return posX;

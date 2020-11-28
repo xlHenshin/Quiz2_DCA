@@ -1,9 +1,14 @@
 package exception;
 
-public class Win {
+public class Win extends Exception{
 
-	public Win() {
-		// TODO Auto-generated constructor stub
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public Win(String message) {
+		super();
 	}
 
 }

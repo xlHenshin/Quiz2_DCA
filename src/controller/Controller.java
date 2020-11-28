@@ -48,4 +48,17 @@ public class Controller {
 		
 		logic.shoot();
 	}
+	
+	public void alienCounter() {
+		
+		logic.alienCounter();
+	}
+	
+	public void end() {
+		logic.end();
+	}
+	
+	public void keyPressed(char key) {
+		logic.keyPressed(key);
+	}
 }

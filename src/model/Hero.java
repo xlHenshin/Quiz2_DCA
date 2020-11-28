@@ -33,6 +33,17 @@ public class Hero extends Character implements Runnable{
 			if(eliminateBullet == true) {
 				bullet.remove(i);
 				eliminateBullet = false;
+				System.out.println(bullet.size());
+			}
+			
+		}
+		
+		for (int i = 0; i < bullet.size(); i++) {
+			
+			if (bullet.get(i).getPosY() <= 0) {
+				
+				bullet.remove(i);
+				System.out.println(bullet.size());
 			}
 		}
 	}
@@ -66,6 +77,7 @@ public class Hero extends Character implements Runnable{
 		
 		Bullet b = new Bullet(posX, posY-30, app);
 		bullet.add(b);
+		System.out.println(bullet.size());
 	}
 
 

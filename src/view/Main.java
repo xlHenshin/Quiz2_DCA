@@ -31,9 +31,12 @@ public class Main extends PApplet{
 		
 		rectMode(CENTER);
 		background (0);
+		
 		controller.paintAlien();
 		controller.paintHero();
 		controller.paintBullet();
+		controller.alienCounter();
+		controller.end();
 		
 		if (moveRight==true){
 
@@ -46,7 +49,15 @@ public class Main extends PApplet{
 		}
 	}
 	
+	public void mouseClicked() {
+		
+		System.out.println(mouseX);
+		System.out.println(mouseY);
+	}
+	
 	public void keyPressed() {
+		
+		controller.keyPressed(key);
 		
 		if(keyCode == RIGHT) {
 			moveRight=true;
@@ -59,6 +70,7 @@ public class Main extends PApplet{
 			
 			controller.shoot();
 		}
+		
 	}
 	
 	public void keyReleased() {

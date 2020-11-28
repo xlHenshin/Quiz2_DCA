@@ -1,9 +1,13 @@
 package exception;
 
-public class Lose {
+public class Lose extends Exception{
 
-	public Lose() {
-		// TODO Auto-generated constructor stub
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public Lose(String message) {
+		super();
 	}
-
 }
