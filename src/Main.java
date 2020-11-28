@@ -17,15 +17,24 @@ public class Main extends PApplet{
 	
 	public void setup() {
 		
-		logic = new Logic();
+		logic = new Logic(this);
 	}
 	
 	public void draw() {
 		
+		rectMode(CENTER);
 		background (0);
+		logic.paintAlien();
+		logic.paintHero();
 	}
 	
 	public void keyPressed() {
 		
+		if(keyCode == RIGHT) {
+			logic.moveRight();
+		}
+		if(keyCode == LEFT) {
+			logic.moveLeft();
+		}
 	}
 }
