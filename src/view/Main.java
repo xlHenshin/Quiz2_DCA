@@ -1,3 +1,7 @@
+package view;
+
+import controller.Controller;
+import model.Logic;
 
 import processing.core.PApplet;
 
@@ -6,10 +10,10 @@ public class Main extends PApplet{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		PApplet.main("Main");
+		PApplet.main("view.Main");
 	}
 
-	private Logic logic;
+	private Controller controller;
 	private boolean moveLeft;
 	private boolean moveRight;
 	
@@ -20,24 +24,24 @@ public class Main extends PApplet{
 	
 	public void setup() {
 		
-		logic = new Logic(this);
+		controller= new Controller(this);
 	}
 	
 	public void draw() {
 		
 		rectMode(CENTER);
 		background (0);
-		logic.paintAlien();
-		logic.paintHero();
+		controller.paintAlien();
+		controller.paintHero();
 		
 		if (moveRight==true){
 
-			logic.moveRight();; 
+			controller.moveRight();; 
 		}
 
 		if (moveLeft==true){
 
-			logic.moveLeft();
+			controller.moveLeft();
 		}
 	}
 	
@@ -52,7 +56,7 @@ public class Main extends PApplet{
 		
 		if (keyCode == ' ') {
 			
-			logic.shoot();
+			controller.shoot();
 		}
 	}
 	

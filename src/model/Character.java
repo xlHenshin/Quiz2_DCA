@@ -1,3 +1,4 @@
+package model;
 import processing.core.PApplet;
 
 public abstract class Character{
