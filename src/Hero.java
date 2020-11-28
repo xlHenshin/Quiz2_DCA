@@ -4,6 +4,8 @@ public class Hero extends Character implements Runnable{
 
 	public Hero(int posX, int posY, int size, PApplet app) {
 		super(posX, posY, size, app);
+		
+		speed=5;
 		// TODO Auto-generated constructor stub
 	}
 

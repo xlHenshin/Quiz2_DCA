@@ -9,6 +9,8 @@ public class Main extends PApplet{
 	}
 
 	private Logic logic;
+	private boolean moveLeft;
+	private boolean moveRight;
 	
 	public void settings() {
 		
@@ -26,15 +28,35 @@ public class Main extends PApplet{
 		background (0);
 		logic.paintAlien();
 		logic.paintHero();
+		
+		if (moveRight==true){
+
+			logic.moveRight();; 
+		}
+
+		if (moveLeft==true){
+
+			logic.moveLeft();
+		}
 	}
 	
 	public void keyPressed() {
 		
 		if(keyCode == RIGHT) {
-			logic.moveRight();
+			moveRight=true;
 		}
 		if(keyCode == LEFT) {
-			logic.moveLeft();
+			moveLeft=true;
+		}
+	}
+	
+	public void keyReleased() {
+		
+		if(keyCode == RIGHT) {
+			moveRight=false;
+		}
+		if(keyCode == LEFT) {
+			moveLeft=false;
 		}
 	}
 }
